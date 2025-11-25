@@ -17,9 +17,9 @@ Browser-based art toy: open page, allow camera, see yourself rebuilt as particle
 ## 4. Functional scope (current)
 - Camera via `getUserMedia`, mirrored feed.
 - Particle rendering in multiple modes:
-  - Simple gas (Canvas), Physics gas (Matter.js), Three.js points, Flow field.
+  - Simple gas (Canvas), Physics gas (Matter.js), Flow field.
 - Interaction:
-  - Hotkeys 1/2/3/4 to switch modes.
+  - Hotkeys 1/2/3 to switch modes.
   - Motion in camera drives local particle velocity pulses.
 - Overlay: minimal help text.
 - Optional screenshot/recording (future).

@@ -3,7 +3,6 @@
 ## 1. Modes and cores
 - Simple gas (Canvas): per-pixel particles, Brownian noise, motion-driven velocity pulses, elastic wall bounce.
 - Physics gas (Matter.js): 2D rigid bodies (circles) with collisions; motion injects forces to nearby bodies.
-- Three.js points: GPU Points; positions/velocities updated in JS with damping, light neighbor repulsion, motion kicks.
 - Flow field: Canvas particles advected by a curl-like sinusoidal field; motion injects random velocity bursts; screen wrap.
 - Legacy `ParticleMirror` + `modes/fluid.ts`: kept for reference, not wired to UI.
 

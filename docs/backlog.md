@@ -4,9 +4,8 @@
 - [x] Vite + React + TS bootstrap
 - [x] Simple gas mode (Canvas) + Brownian/motion pulses
 - [x] Matter.js physics mode
-- [x] Three.js points mode
 - [x] Flow field mode
-- [x] Hotkey mode switch (1/2/3/4)
+- [x] Hotkey mode switch (1/2/3)
 - [x] Basic Vitest unit test
 - [x] English README and design docs
 

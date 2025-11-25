@@ -5,7 +5,6 @@
 - Multiple visual modes under `src/visuals/`:
   - Canvas-based simple gas / flow field.
   - Matter.js 2D physics.
-  - Three.js points render.
 - React mounts the container, renders minimal overlay, and maps hotkeys to modes.
 
 ## 2. Modules

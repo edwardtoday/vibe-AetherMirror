@@ -14,8 +14,8 @@ Browser-based art toy that turns your mirrored webcam feed into reactive particl
 4) Hotkeys switch rendering/physics modes for different feels.
 
 ## 4. Current scope
-- Four modes: Simple gas (Canvas), Physics gas (Matter.js), Three.js points, Flow field.
-- Hotkeys 1/2/3/4 to switch; minimal overlay help.
+- Three modes: Simple gas (Canvas), Physics gas (Matter.js), Flow field.
+- Hotkeys 1/2/3 to switch; minimal overlay help.
 - Motion-driven pulses; faint 3% pixelated video overlay for reference.
 
 ## 5. Interaction / IA
