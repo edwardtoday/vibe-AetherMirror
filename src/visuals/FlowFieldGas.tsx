@@ -61,8 +61,9 @@ export function FlowFieldGas() {
       window.addEventListener('resize', resetParticles)
 
       const flowNoise = (x: number, y: number, t: number, phaseX: number, phaseY: number) => ({
-        x: Math.sin(0.0015 * x + t * 0.7 + phaseX) * 50,
-        y: Math.cos(0.0012 * y + t * 0.6 + phaseY) * 50,
+        // very gentle drift; main motion comes from camera-injected impulses
+        x: Math.sin(0.001 * x + t * 0.4 + phaseX) * 12,
+        y: Math.cos(0.001 * y + t * 0.3 + phaseY) * 12,
       })
 
       const render = () => {
@@ -105,8 +106,8 @@ export function FlowFieldGas() {
             if (motion > 0.25) {
               for (let k = 0; k < 10; k++) {
                 const id = (idx + k * 29) % particleCount
-                velocities[id * 2] += (Math.random() - 0.5) * 80 * motion
-                velocities[id * 2 + 1] += (Math.random() - 0.5) * 80 * motion
+                velocities[id * 2] += (Math.random() - 0.5) * 60 * motion
+                velocities[id * 2 + 1] += (Math.random() - 0.5) * 60 * motion
               }
             }
           }
@@ -118,9 +119,9 @@ export function FlowFieldGas() {
         }
 
         // Update particles: flow advection + damping + wrap
-        const damping = 0.995
-        const thermal = 8
-        const maxSpeed = 160
+        const damping = 0.996
+        const thermal = 4
+        const maxSpeed = 120
         for (let i = 0; i < particleCount; i++) {
           let x = positions[i * 2]
           let y = positions[i * 2 + 1]
