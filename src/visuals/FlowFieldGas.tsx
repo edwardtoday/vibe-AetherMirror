@@ -61,8 +61,8 @@ export function FlowFieldGas() {
       window.addEventListener('resize', resetParticles)
 
       const flowNoise = (x: number, y: number, t: number, phaseX: number, phaseY: number) => ({
-        x: Math.sin(0.0015 * x + t * 0.7 + phaseX) * 80,
-        y: Math.cos(0.0012 * y + t * 0.6 + phaseY) * 80,
+        x: Math.sin(0.0015 * x + t * 0.7 + phaseX) * 50,
+        y: Math.cos(0.0012 * y + t * 0.6 + phaseY) * 50,
       })
 
       const render = () => {
@@ -105,8 +105,8 @@ export function FlowFieldGas() {
             if (motion > 0.25) {
               for (let k = 0; k < 10; k++) {
                 const id = (idx + k * 29) % particleCount
-                velocities[id * 2] += (Math.random() - 0.5) * 140 * motion
-                velocities[id * 2 + 1] += (Math.random() - 0.5) * 140 * motion
+                velocities[id * 2] += (Math.random() - 0.5) * 80 * motion
+                velocities[id * 2 + 1] += (Math.random() - 0.5) * 80 * motion
               }
             }
           }
@@ -118,9 +118,9 @@ export function FlowFieldGas() {
         }
 
         // Update particles: flow advection + damping + wrap
-        const damping = 0.988
-        const thermal = 20
-        const maxSpeed = 280
+        const damping = 0.995
+        const thermal = 8
+        const maxSpeed = 160
         for (let i = 0; i < particleCount; i++) {
           let x = positions[i * 2]
           let y = positions[i * 2 + 1]
@@ -130,8 +130,8 @@ export function FlowFieldGas() {
           const phaseX = phases ? phases[i * 2] : 0
           const phaseY = phases ? phases[i * 2 + 1] : 0
           const flow = flowNoise(x, y, now, phaseX, phaseY)
-          vx += flow.x * 0.05
-          vy += flow.y * 0.05
+          vx += flow.x * 0.02
+          vy += flow.y * 0.02
 
           // small thermal noise
           vx += (Math.random() - 0.5) * thermal
@@ -146,8 +146,8 @@ export function FlowFieldGas() {
             const dist2 = dx * dx + dy * dy
             if (dist2 > 1e-2 && dist2 < 900) {
               const inv = 1 / Math.sqrt(dist2)
-              vx += dx * inv * 40 * 0.016
-              vy += dy * inv * 40 * 0.016
+              vx += dx * inv * 20 * 0.016
+              vy += dy * inv * 20 * 0.016
             }
           }
 
